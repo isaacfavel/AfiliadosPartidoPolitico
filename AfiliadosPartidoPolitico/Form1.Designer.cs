@@ -131,13 +131,13 @@
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(820, 150);
+            this.dgvDatos.Size = new System.Drawing.Size(844, 266);
             this.dgvDatos.TabIndex = 8;
             // 
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Location = new System.Drawing.Point(65, 370);
+            this.checkBoxFecha.Location = new System.Drawing.Point(65, 459);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
             this.checkBoxFecha.TabIndex = 9;
@@ -147,7 +147,7 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(159, 393);
+            this.lblFechaInicio.Location = new System.Drawing.Point(62, 482);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
             this.lblFechaInicio.TabIndex = 10;
@@ -156,7 +156,7 @@
             // lblFechaTermina
             // 
             this.lblFechaTermina.AutoSize = true;
-            this.lblFechaTermina.Location = new System.Drawing.Point(162, 434);
+            this.lblFechaTermina.Location = new System.Drawing.Point(62, 498);
             this.lblFechaTermina.Name = "lblFechaTermina";
             this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
             this.lblFechaTermina.TabIndex = 11;
@@ -183,7 +183,7 @@
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Municipio";
+            this.Column2.HeaderText = "MUNICIPIO";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 125;

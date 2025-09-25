@@ -63,11 +63,11 @@ namespace AfiliadosPartidoPolitico
                 int filas = worksheet.Dimension.End.Row+2;
                 int co=dt.Columns.Count;
                 txtEstado.Text = co.ToString();
-                for (int i = 2; i < filas; i++) {
+                for (int i =2; i < filas; i++) {
                     //creamos un data row para copiar el contenido de la celda 
                     DataRow row = dt.NewRow();
-                    for (int j =1; i < dt.Columns.Count+1; j++)
-                    {
+                    for (int j =1; j < dt.Columns.Count+1; j++)
+                    {  
                         row[j-1 ] = worksheet.Cells[i, j].Text;
                     }
                     dt.Rows.Add(row);
@@ -75,7 +75,6 @@ namespace AfiliadosPartidoPolitico
 
 
                 //Mostrar datos en el dgvDatos
-
                 //Le agregamos las filas que tiene el dataTable
                 dgvDatos.Rows.Add(dt.Rows.Count);
 
