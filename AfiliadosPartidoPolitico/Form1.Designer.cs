@@ -28,22 +28,234 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAfiliados));
+            this.lblArchivo = new System.Windows.Forms.Label();
+            this.txtArchivo = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblMunicipio = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.cbxMunicipio = new System.Windows.Forms.ComboBox();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.checkBoxFecha = new System.Windows.Forms.CheckBox();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.lblFechaTermina = new System.Windows.Forms.Label();
+            this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblArchivo
+            // 
+            this.lblArchivo.AutoSize = true;
+            this.lblArchivo.Location = new System.Drawing.Point(25, 21);
+            this.lblArchivo.Name = "lblArchivo";
+            this.lblArchivo.Size = new System.Drawing.Size(52, 16);
+            this.lblArchivo.TabIndex = 0;
+            this.lblArchivo.Text = "Archivo";
+            // 
+            // txtArchivo
+            // 
+            this.txtArchivo.Location = new System.Drawing.Point(12, 40);
+            this.txtArchivo.Name = "txtArchivo";
+            this.txtArchivo.Size = new System.Drawing.Size(148, 22);
+            this.txtArchivo.TabIndex = 1;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.Location = new System.Drawing.Point(206, 34);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(92, 34);
+            this.btnCargar.TabIndex = 3;
+            this.btnCargar.Text = "Cargar";
+            this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(12, 100);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(50, 16);
+            this.lblEstado.TabIndex = 4;
+            this.lblEstado.Text = "Estado";
+            // 
+            // lblMunicipio
+            // 
+            this.lblMunicipio.AutoSize = true;
+            this.lblMunicipio.Location = new System.Drawing.Point(12, 144);
+            this.lblMunicipio.Name = "lblMunicipio";
+            this.lblMunicipio.Size = new System.Drawing.Size(64, 16);
+            this.lblMunicipio.TabIndex = 5;
+            this.lblMunicipio.Text = "Municipio";
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(93, 93);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(128, 22);
+            this.txtEstado.TabIndex = 6;
+            // 
+            // cbxMunicipio
+            // 
+            this.cbxMunicipio.FormattingEnabled = true;
+            this.cbxMunicipio.Location = new System.Drawing.Point(93, 136);
+            this.cbxMunicipio.Name = "cbxMunicipio";
+            this.cbxMunicipio.Size = new System.Drawing.Size(121, 24);
+            this.cbxMunicipio.TabIndex = 7;
+            // 
+            // dgvDatos
+            // 
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column6,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dgvDatos.Location = new System.Drawing.Point(15, 187);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersWidth = 51;
+            this.dgvDatos.RowTemplate.Height = 24;
+            this.dgvDatos.Size = new System.Drawing.Size(820, 150);
+            this.dgvDatos.TabIndex = 8;
+            // 
+            // checkBoxFecha
+            // 
+            this.checkBoxFecha.AutoSize = true;
+            this.checkBoxFecha.Location = new System.Drawing.Point(65, 370);
+            this.checkBoxFecha.Name = "checkBoxFecha";
+            this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
+            this.checkBoxFecha.TabIndex = 9;
+            this.checkBoxFecha.Text = "Fecha";
+            this.checkBoxFecha.UseVisualStyleBackColor = true;
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(159, 393);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
+            this.lblFechaInicio.TabIndex = 10;
+            this.lblFechaInicio.Text = "Fecha Inicio";
+            // 
+            // lblFechaTermina
+            // 
+            this.lblFechaTermina.AutoSize = true;
+            this.lblFechaTermina.Location = new System.Drawing.Point(162, 434);
+            this.lblFechaTermina.Name = "lblFechaTermina";
+            this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
+            this.lblFechaTermina.TabIndex = 11;
+            this.lblFechaTermina.Text = "Fecha Termina";
+            // 
+            // oFDAbrir
+            // 
+            this.oFDAbrir.FileName = "openFileDialog1";
+            this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "ENTIDAD";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Municipio";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "NOMBRE";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "FECHA_AFILIACION";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "ESTATUS";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
             // 
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 523);
+            this.Controls.Add(this.lblFechaTermina);
+            this.Controls.Add(this.lblFechaInicio);
+            this.Controls.Add(this.checkBoxFecha);
+            this.Controls.Add(this.dgvDatos);
+            this.Controls.Add(this.cbxMunicipio);
+            this.Controls.Add(this.txtEstado);
+            this.Controls.Add(this.lblMunicipio);
+            this.Controls.Add(this.lblEstado);
+            this.Controls.Add(this.btnCargar);
+            this.Controls.Add(this.txtArchivo);
+            this.Controls.Add(this.lblArchivo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAfiliados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Afiliados Pri";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblArchivo;
+        private System.Windows.Forms.TextBox txtArchivo;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblMunicipio;
+        private System.Windows.Forms.TextBox txtEstado;
+        private System.Windows.Forms.ComboBox cbxMunicipio;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.CheckBox checkBoxFecha;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.Label lblFechaTermina;
+        private System.Windows.Forms.OpenFileDialog oFDAbrir;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 
