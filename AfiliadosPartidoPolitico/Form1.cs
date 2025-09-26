@@ -60,9 +60,7 @@ namespace AfiliadosPartidoPolitico
                     dt.Columns.Add(col);
                 }
                  //obtengo el numero de filas
-                int filas = worksheet.Dimension.End.Row+2;
-                int co=dt.Columns.Count;
-                txtEstado.Text = co.ToString();
+                int filas = worksheet.Dimension.End.Row;
                 for (int i =2; i < filas; i++) {
                     //creamos un data row para copiar el contenido de la celda 
                     DataRow row = dt.NewRow();
