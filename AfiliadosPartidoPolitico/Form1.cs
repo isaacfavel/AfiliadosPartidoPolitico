@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AfiliadosPartidoPolitico
 {
@@ -17,6 +19,7 @@ namespace AfiliadosPartidoPolitico
     {
         //declarar encabezados de columna
         List<string> columnas;
+        
         public FrmAfiliados()
         {
             InitializeComponent();
@@ -27,7 +30,8 @@ namespace AfiliadosPartidoPolitico
             columnas.Add("NOMBRE");
             columnas.Add("FECHA_AFILIACION");
             columnas.Add("ESTATUS");
-
+      
+            pictureBox1.Visible= false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -36,11 +40,35 @@ namespace AfiliadosPartidoPolitico
             if (oFDAbrir.ShowDialog() == DialogResult.OK)
             {
                 string archivo = oFDAbrir.FileName;
-                txtEstado.Text ="Coahuila";
-                cargarDatos(archivo);
+                txtArchivo.Text = archivo;
+                pictureBox1.Visible = true;
+                Thread p1 = new Thread(() => cargarDatos(archivo));
+                p1.Start();
+
             }
+
+            municipios();
+
+            
         }
 
+        private void municipios()
+        {
+            int filas= dgvDatos.Rows.Count;
+            lblArchivo.Text=filas.ToString();
+            for (int i = 0; i <dgvDatos.Rows.Count ; i++)
+            {
+                var ultimoElemento = cbxMunicipio.Items[cbxMunicipio.Items.Count - 1];
+                string textoUltimo = ultimoElemento.ToString();
+
+                string mun = dgvDatos[2, i].Value.ToString();
+                if (mun !=textoUltimo)
+                {
+                    
+                    cbxMunicipio.Items.Add(mun);
+                }
+            }
+        }
         private void cargarDatos(string archivo)
         {
             //licencia de paquete
@@ -49,7 +77,7 @@ namespace AfiliadosPartidoPolitico
             using (var paquete = new ExcelPackage(new System.IO.FileInfo(archivo)))
             {
                 //se obtiene la primera hoja del archivo
-                ExcelWorksheet worksheet = paquete.Workbook.Worksheets[0]; 
+                ExcelWorksheet worksheet = paquete.Workbook.Worksheets[0];
 
                 //se crea una tbla para ponerle la informacion
                 DataTable dt = new DataTable();
@@ -72,18 +100,20 @@ namespace AfiliadosPartidoPolitico
                 }
 
 
-                //Mostrar datos en el dgvDatos
-                //Le agregamos las filas que tiene el dataTable
-                dgvDatos.Rows.Add(dt.Rows.Count);
+                
 
-                for (int i = 0; i < dt.Rows.Count; i++)
+                
+
+                this.Invoke((MethodInvoker)delegate
                 {
-                    for (int j = 0; j < dt.Columns.Count; j++)
-                    {
-                        //recorre fila por fila para copiar los valores
-                        dgvDatos.Rows[i].Cells[j].Value = dt.Rows[i][j].ToString();
-                    }
-                }
+                    dgvDatos.Columns.Clear();
+                    dgvDatos.DataSource = dt;
+                    dgvDatos.Columns[0].Width =45;
+                    dgvDatos.Columns[3].Width = 200;
+                    pictureBox1.Visible =false;
+
+                });
+                
             }
         }
     }

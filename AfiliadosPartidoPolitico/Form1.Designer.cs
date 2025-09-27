@@ -43,6 +43,7 @@
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaTermina = new System.Windows.Forms.Label();
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +51,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblArchivo
@@ -65,7 +67,7 @@
             // 
             this.txtArchivo.Location = new System.Drawing.Point(12, 40);
             this.txtArchivo.Name = "txtArchivo";
-            this.txtArchivo.Size = new System.Drawing.Size(148, 22);
+            this.txtArchivo.Size = new System.Drawing.Size(237, 22);
             this.txtArchivo.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -76,7 +78,7 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(206, 34);
+            this.btnCargar.Location = new System.Drawing.Point(266, 34);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(92, 34);
             this.btnCargar.TabIndex = 3;
@@ -119,6 +121,9 @@
             // 
             // dgvDatos
             // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.BackgroundColor = System.Drawing.Color.BurlyWood;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -129,9 +134,10 @@
             this.Column5});
             this.dgvDatos.Location = new System.Drawing.Point(15, 187);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(844, 266);
+            this.dgvDatos.Size = new System.Drawing.Size(927, 266);
             this.dgvDatos.TabIndex = 8;
             // 
             // checkBoxFecha
@@ -167,11 +173,22 @@
             this.oFDAbrir.FileName = "openFileDialog1";
             this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(373, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // Column1
             // 
             this.Column1.HeaderText = "ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
             // Column6
@@ -179,6 +196,7 @@
             this.Column6.HeaderText = "ENTIDAD";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             this.Column6.Width = 125;
             // 
             // Column2
@@ -186,6 +204,7 @@
             this.Column2.HeaderText = "MUNICIPIO";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
             // 
             // Column3
@@ -193,13 +212,15 @@
             this.Column3.HeaderText = "NOMBRE";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 200;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "FECHA_AFILIACION";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
             // Column5
@@ -207,6 +228,7 @@
             this.Column5.HeaderText = "ESTATUS";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 125;
             // 
             // FrmAfiliados
@@ -214,6 +236,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 523);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblFechaTermina);
             this.Controls.Add(this.lblFechaInicio);
             this.Controls.Add(this.checkBoxFecha);
@@ -230,6 +253,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Afiliados Pri";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +274,7 @@
         private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.Label lblFechaTermina;
         private System.Windows.Forms.OpenFileDialog oFDAbrir;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
