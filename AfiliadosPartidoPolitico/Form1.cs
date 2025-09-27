@@ -46,16 +46,15 @@ namespace AfiliadosPartidoPolitico
                 p1.Start();
 
             }
-
-            municipios();
+            lblArchivo.Text = dgvDatos.Rows.Count.ToString();
+            //municipios();
 
             
         }
 
         private void municipios()
         {
-            int filas= dgvDatos.Rows.Count;
-            lblArchivo.Text=filas.ToString();
+            
             for (int i = 0; i <dgvDatos.Rows.Count ; i++)
             {
                 var ultimoElemento = cbxMunicipio.Items[cbxMunicipio.Items.Count - 1];
