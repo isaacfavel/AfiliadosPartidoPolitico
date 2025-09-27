@@ -19,7 +19,8 @@ namespace AfiliadosPartidoPolitico
     {
         //declarar encabezados de columna
         List<string> columnas;
-        
+        DataTable dt;
+
         public FrmAfiliados()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace AfiliadosPartidoPolitico
             columnas.Add("NOMBRE");
             columnas.Add("FECHA_AFILIACION");
             columnas.Add("ESTATUS");
-      
+            dt = new DataTable();
             pictureBox1.Visible= false;
         }
 
@@ -46,28 +47,12 @@ namespace AfiliadosPartidoPolitico
                 p1.Start();
 
             }
-            lblArchivo.Text = dgvDatos.Rows.Count.ToString();
-            //municipios();
 
             
+
         }
 
-        private void municipios()
-        {
-            
-            for (int i = 0; i <dgvDatos.Rows.Count ; i++)
-            {
-                var ultimoElemento = cbxMunicipio.Items[cbxMunicipio.Items.Count - 1];
-                string textoUltimo = ultimoElemento.ToString();
-
-                string mun = dgvDatos[2, i].Value.ToString();
-                if (mun !=textoUltimo)
-                {
-                    
-                    cbxMunicipio.Items.Add(mun);
-                }
-            }
-        }
+        
         private void cargarDatos(string archivo)
         {
             //licencia de paquete
@@ -79,7 +64,7 @@ namespace AfiliadosPartidoPolitico
                 ExcelWorksheet worksheet = paquete.Workbook.Worksheets[0];
 
                 //se crea una tbla para ponerle la informacion
-                DataTable dt = new DataTable();
+                
 
                 foreach (var col in columnas)
                 {
@@ -111,9 +96,27 @@ namespace AfiliadosPartidoPolitico
                     dgvDatos.Columns[3].Width = 200;
                     pictureBox1.Visible =false;
 
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        var celda = dt.Rows[i][2];
+
+                        if (celda != null)
+                        {
+                            string mun = celda.ToString();
+
+                            // Evita agregar duplicados
+                            if (!cbxMunicipio.Items.Contains(mun))
+                            {
+                                cbxMunicipio.Items.Add(mun);
+                            }
+                        }
+                    }
                 });
+
                 
             }
         }
+
+        
     }
 }

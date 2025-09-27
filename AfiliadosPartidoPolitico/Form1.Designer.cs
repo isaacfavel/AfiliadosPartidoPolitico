@@ -39,17 +39,17 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.cbxMunicipio = new System.Windows.Forms.ComboBox();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.checkBoxFecha = new System.Windows.Forms.CheckBox();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.lblFechaTermina = new System.Windows.Forms.Label();
-            this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBoxFecha = new System.Windows.Forms.CheckBox();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.lblFechaTermina = new System.Windows.Forms.Label();
+            this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -140,49 +140,6 @@
             this.dgvDatos.Size = new System.Drawing.Size(927, 266);
             this.dgvDatos.TabIndex = 8;
             // 
-            // checkBoxFecha
-            // 
-            this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Location = new System.Drawing.Point(65, 459);
-            this.checkBoxFecha.Name = "checkBoxFecha";
-            this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
-            this.checkBoxFecha.TabIndex = 9;
-            this.checkBoxFecha.Text = "Fecha";
-            this.checkBoxFecha.UseVisualStyleBackColor = true;
-            // 
-            // lblFechaInicio
-            // 
-            this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(62, 482);
-            this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
-            this.lblFechaInicio.TabIndex = 10;
-            this.lblFechaInicio.Text = "Fecha Inicio";
-            // 
-            // lblFechaTermina
-            // 
-            this.lblFechaTermina.AutoSize = true;
-            this.lblFechaTermina.Location = new System.Drawing.Point(62, 498);
-            this.lblFechaTermina.Name = "lblFechaTermina";
-            this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
-            this.lblFechaTermina.TabIndex = 11;
-            this.lblFechaTermina.Text = "Fecha Termina";
-            // 
-            // oFDAbrir
-            // 
-            this.oFDAbrir.FileName = "openFileDialog1";
-            this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(373, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "ID";
@@ -230,6 +187,49 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             this.Column5.Width = 125;
+            // 
+            // checkBoxFecha
+            // 
+            this.checkBoxFecha.AutoSize = true;
+            this.checkBoxFecha.Location = new System.Drawing.Point(65, 459);
+            this.checkBoxFecha.Name = "checkBoxFecha";
+            this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
+            this.checkBoxFecha.TabIndex = 9;
+            this.checkBoxFecha.Text = "Fecha";
+            this.checkBoxFecha.UseVisualStyleBackColor = true;
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(62, 482);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
+            this.lblFechaInicio.TabIndex = 10;
+            this.lblFechaInicio.Text = "Fecha Inicio";
+            // 
+            // lblFechaTermina
+            // 
+            this.lblFechaTermina.AutoSize = true;
+            this.lblFechaTermina.Location = new System.Drawing.Point(62, 498);
+            this.lblFechaTermina.Name = "lblFechaTermina";
+            this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
+            this.lblFechaTermina.TabIndex = 11;
+            this.lblFechaTermina.Text = "Fecha Termina";
+            // 
+            // oFDAbrir
+            // 
+            this.oFDAbrir.FileName = "openFileDialog1";
+            this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(373, 21);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmAfiliados
             // 
