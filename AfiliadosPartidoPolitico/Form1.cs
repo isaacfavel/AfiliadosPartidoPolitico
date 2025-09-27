@@ -39,6 +39,7 @@ namespace AfiliadosPartidoPolitico
                 txtEstado.Text ="Coahuila";
                 cargarDatos(archivo);
             }
+            
         }
 
         private void cargarDatos(string archivo)
