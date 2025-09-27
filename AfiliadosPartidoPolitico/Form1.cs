@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AfiliadosPartidoPolitico
 {
@@ -40,6 +41,26 @@ namespace AfiliadosPartidoPolitico
                 cargarDatos(archivo);
             }
             
+            
+        }
+
+        private void cargarMunicipios()
+        {
+            for (int i = 0; i < dgvDatos.Rows.Count; i++)
+            {
+                var celda = dgvDatos[2, i].Value;
+
+                if (celda != null)
+                {
+                    string mun = celda.ToString();
+
+                    // Evita agregar duplicados
+                    if (!cbxMunicipio.Items.Contains(mun))
+                    {
+                        cbxMunicipio.Items.Add(mun);
+                    }
+                }
+            }
         }
 
         private void cargarDatos(string archivo)
@@ -86,6 +107,11 @@ namespace AfiliadosPartidoPolitico
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cargarMunicipios();
         }
     }
 }
