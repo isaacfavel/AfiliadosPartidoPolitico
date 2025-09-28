@@ -49,9 +49,11 @@
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaTermina = new System.Windows.Forms.Label();
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxCargando = new System.Windows.Forms.PictureBox();
+            this.lblAfiliados = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).BeginInit();
             this.SuspendLayout();
             // 
             // lblArchivo
@@ -118,6 +120,7 @@
             this.cbxMunicipio.Name = "cbxMunicipio";
             this.cbxMunicipio.Size = new System.Drawing.Size(121, 24);
             this.cbxMunicipio.TabIndex = 7;
+            this.cbxMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbxMunicipio_SelectedIndexChanged);
             // 
             // dgvDatos
             // 
@@ -191,17 +194,18 @@
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Location = new System.Drawing.Point(65, 459);
+            this.checkBoxFecha.Location = new System.Drawing.Point(733, 470);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
             this.checkBoxFecha.TabIndex = 9;
             this.checkBoxFecha.Text = "Fecha";
             this.checkBoxFecha.UseVisualStyleBackColor = true;
+            this.checkBoxFecha.CheckedChanged += new System.EventHandler(this.checkBoxFecha_CheckedChanged);
             // 
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(62, 482);
+            this.lblFechaInicio.Location = new System.Drawing.Point(596, 470);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
             this.lblFechaInicio.TabIndex = 10;
@@ -210,7 +214,7 @@
             // lblFechaTermina
             // 
             this.lblFechaTermina.AutoSize = true;
-            this.lblFechaTermina.Location = new System.Drawing.Point(62, 498);
+            this.lblFechaTermina.Location = new System.Drawing.Point(596, 486);
             this.lblFechaTermina.Name = "lblFechaTermina";
             this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
             this.lblFechaTermina.TabIndex = 11;
@@ -221,22 +225,43 @@
             this.oFDAbrir.FileName = "openFileDialog1";
             this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
             // 
-            // pictureBox1
+            // pbxCargando
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(373, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
+            this.pbxCargando.Image = ((System.Drawing.Image)(resources.GetObject("pbxCargando.Image")));
+            this.pbxCargando.Location = new System.Drawing.Point(373, 21);
+            this.pbxCargando.Name = "pbxCargando";
+            this.pbxCargando.Size = new System.Drawing.Size(53, 50);
+            this.pbxCargando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbxCargando.TabIndex = 12;
+            this.pbxCargando.TabStop = false;
+            // 
+            // lblAfiliados
+            // 
+            this.lblAfiliados.AutoSize = true;
+            this.lblAfiliados.Location = new System.Drawing.Point(32, 473);
+            this.lblAfiliados.Name = "lblAfiliados";
+            this.lblAfiliados.Size = new System.Drawing.Size(142, 16);
+            this.lblAfiliados.TabIndex = 13;
+            this.lblAfiliados.Text = "Numero de Afiliados: 0";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(633, 68);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 523);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblAfiliados);
+            this.Controls.Add(this.pbxCargando);
             this.Controls.Add(this.lblFechaTermina);
             this.Controls.Add(this.lblFechaInicio);
             this.Controls.Add(this.checkBoxFecha);
@@ -253,7 +278,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Afiliados Pri";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,13 +299,15 @@
         private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.Label lblFechaTermina;
         private System.Windows.Forms.OpenFileDialog oFDAbrir;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxCargando;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label lblAfiliados;
+        private System.Windows.Forms.Button button1;
     }
 }
 

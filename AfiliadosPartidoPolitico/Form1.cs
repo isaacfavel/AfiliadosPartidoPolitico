@@ -1,5 +1,6 @@
 ﻿using OfficeOpenXml;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,7 @@ namespace AfiliadosPartidoPolitico
             columnas.Add("FECHA_AFILIACION");
             columnas.Add("ESTATUS");
             dt = new DataTable();
-            pictureBox1.Visible= false;
+            pbxCargando.Visible= false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace AfiliadosPartidoPolitico
             {
                 string archivo = oFDAbrir.FileName;
                 txtArchivo.Text = archivo;
-                pictureBox1.Visible = true;
+                pbxCargando.Visible = true;
                 Thread p1 = new Thread(() => cargarDatos(archivo));
                 p1.Start();
 
@@ -64,14 +65,17 @@ namespace AfiliadosPartidoPolitico
                 ExcelWorksheet worksheet = paquete.Workbook.Worksheets[0];
 
                 //se crea una tbla para ponerle la informacion
-                
+
 
                 foreach (var col in columnas)
                 {
-                    //Se agregan columnas al data table
-                    dt.Columns.Add(col);
+                    //validar si ya estan las columnas
+                    if (!dt.Columns.Contains(col))
+                    {
+                        dt.Columns.Add(col);
+                    }
                 }
-                 //obtengo el numero de filas
+                //obtengo el numero de filas
                 int filas = worksheet.Dimension.End.Row;
                 for (int i =2; i < filas; i++) {
                     //creamos un data row para copiar el contenido de la celda 
@@ -94,8 +98,11 @@ namespace AfiliadosPartidoPolitico
                     dgvDatos.DataSource = dt;
                     dgvDatos.Columns[0].Width =45;
                     dgvDatos.Columns[3].Width = 200;
-                    pictureBox1.Visible =false;
-
+                    pbxCargando.Visible =false;
+                    cbxMunicipio.Items.Add("Todos");
+                    cbxMunicipio.Items.Add("Sin municipio");
+                    txtEstado.Text = dt.Rows[0][1].ToString();
+                    numeroAfiliados();
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         var celda = dt.Rows[i][2];
@@ -105,7 +112,7 @@ namespace AfiliadosPartidoPolitico
                             string mun = celda.ToString();
 
                             // Evita agregar duplicados
-                            if (!cbxMunicipio.Items.Contains(mun))
+                            if (!cbxMunicipio.Items.Contains(mun) && mun!="")
                             {
                                 cbxMunicipio.Items.Add(mun);
                             }
@@ -117,6 +124,62 @@ namespace AfiliadosPartidoPolitico
             }
         }
 
+        private void numeroAfiliados() {
+            lblAfiliados.Text = "Numero de Afiliados: " + dgvDatos.Rows.Count.ToString();
+        }
+
+        private void checkBoxFecha_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
         
+        private void cbxMunicipio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string municipio = cbxMunicipio.SelectedItem.ToString();
+            // Clonamos la estructura del DataTable original
+            
+            DataTable dat = dt.Clone();
+            if (municipio == "Todos")
+            {
+                dgvDatos.DataSource = dt;
+            }
+            else
+            {
+                foreach (DataRow fila in dt.Rows)
+                {
+                    string mun;
+                    //comprobamos si el municipio esta vacio
+                    if (fila["MUNICIPIO"] == DBNull.Value)
+                    {
+                        mun = "";
+                    }
+                    else
+                    {
+                        mun = fila["MUNICIPIO"].ToString();
+                    }
+                    if (municipio == "Sin municipio" && string.IsNullOrWhiteSpace(mun))
+                    {
+                        dat.ImportRow(fila);
+                    }
+                    else if (mun == municipio)
+                    {
+                        dat.ImportRow(fila);
+                    }
+                }
+
+                dgvDatos.DataSource = dat;
+            }
+            numeroAfiliados();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dgvDatos.DataSource = null;
+            dt.Clear();
+            numeroAfiliados();
+            cbxMunicipio.Items.Clear();
+            txtArchivo.Clear();
+            txtEstado.Clear();
+        }
     }
 }
