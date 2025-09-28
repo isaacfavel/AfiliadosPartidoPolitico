@@ -51,9 +51,9 @@
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
             this.pbxCargando = new System.Windows.Forms.PictureBox();
             this.lblAfiliados = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpTermina = new System.Windows.Forms.DateTimePicker();
+            this.btnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +120,7 @@
             this.cbxMunicipio.FormattingEnabled = true;
             this.cbxMunicipio.Location = new System.Drawing.Point(93, 136);
             this.cbxMunicipio.Name = "cbxMunicipio";
-            this.cbxMunicipio.Size = new System.Drawing.Size(121, 24);
+            this.cbxMunicipio.Size = new System.Drawing.Size(156, 24);
             this.cbxMunicipio.TabIndex = 7;
             this.cbxMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbxMunicipio_SelectedIndexChanged);
             // 
@@ -246,38 +246,38 @@
             this.lblAfiliados.TabIndex = 13;
             this.lblAfiliados.Text = "Numero de Afiliados: 0";
             // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(633, 68);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 14;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dtpInicio
             // 
             this.dtpInicio.Location = new System.Drawing.Point(698, 469);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(244, 22);
+            this.dtpInicio.Size = new System.Drawing.Size(268, 22);
             this.dtpInicio.TabIndex = 15;
             // 
             // dtpTermina
             // 
             this.dtpTermina.Location = new System.Drawing.Point(698, 497);
             this.dtpTermina.Name = "dtpTermina";
-            this.dtpTermina.Size = new System.Drawing.Size(244, 22);
+            this.dtpTermina.Size = new System.Drawing.Size(268, 22);
             this.dtpTermina.TabIndex = 16;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(605, 125);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 17;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 523);
+            this.ClientSize = new System.Drawing.Size(1014, 523);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dtpTermina);
             this.Controls.Add(this.dtpInicio);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblAfiliados);
             this.Controls.Add(this.pbxCargando);
             this.Controls.Add(this.lblFechaTermina);
@@ -325,9 +325,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label lblAfiliados;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.DateTimePicker dtpTermina;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 

@@ -131,13 +131,44 @@ namespace AfiliadosPartidoPolitico
         private void checkBoxFecha_CheckedChanged(object sender, EventArgs e)
         {
             
+           
+
+            if (checkBoxFecha.Checked)
+            {
+                DateTime fechaInicio = dtpInicio.Value;
+                DateTime fechaTermina = dtpTermina.Value;
+
+                //Creamos un nuevo dataTable
+                DataTable tablaFecha = dt.Clone();
+
+                foreach (DataRow fila in dt.Rows)
+                {
+                    
+                    DateTime fecha = Convert.ToDateTime(fila["FECHA_AFILIACION"]);
+
+                    // checar la fecha para ver si esta dentro del rango
+                    if (fecha >= fechaInicio && fecha <= fechaTermina)
+                    {
+                        tablaFecha.ImportRow(fila);
+                    }
+                }
+
+                dgvDatos.DataSource = tablaFecha;
+            }
+            else
+            {
+                dgvDatos.DataSource = dt;
+                //cbxMunicipio.SelectedIndex = 0;
+            }
+
+            numeroAfiliados();
         }
         
         private void cbxMunicipio_SelectedIndexChanged(object sender, EventArgs e)
         {
             string municipio = cbxMunicipio.SelectedItem.ToString();
-            // Clonamos la estructura del DataTable original
             
+            // Clonamos la estructura del DataTable original
             DataTable dat = dt.Clone();
             if (municipio == "Todos")
             {
@@ -168,11 +199,13 @@ namespace AfiliadosPartidoPolitico
                 }
 
                 dgvDatos.DataSource = dat;
+
             }
             numeroAfiliados();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnReset_Click(object sender, EventArgs e)
         {
             dgvDatos.DataSource = null;
             dt.Clear();
@@ -180,6 +213,8 @@ namespace AfiliadosPartidoPolitico
             cbxMunicipio.Items.Clear();
             txtArchivo.Clear();
             txtEstado.Clear();
+            checkBoxFecha.Checked = false;
+
         }
     }
 }
