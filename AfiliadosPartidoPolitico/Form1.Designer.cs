@@ -51,7 +51,9 @@
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
             this.pbxCargando = new System.Windows.Forms.PictureBox();
             this.lblAfiliados = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpTermina = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).BeginInit();
             this.SuspendLayout();
@@ -194,7 +196,7 @@
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
-            this.checkBoxFecha.Location = new System.Drawing.Point(733, 470);
+            this.checkBoxFecha.Location = new System.Drawing.Point(513, 472);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
             this.checkBoxFecha.TabIndex = 9;
@@ -205,7 +207,7 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Location = new System.Drawing.Point(596, 470);
+            this.lblFechaInicio.Location = new System.Drawing.Point(602, 473);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
             this.lblFechaInicio.TabIndex = 10;
@@ -214,7 +216,7 @@
             // lblFechaTermina
             // 
             this.lblFechaTermina.AutoSize = true;
-            this.lblFechaTermina.Location = new System.Drawing.Point(596, 486);
+            this.lblFechaTermina.Location = new System.Drawing.Point(594, 498);
             this.lblFechaTermina.Name = "lblFechaTermina";
             this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
             this.lblFechaTermina.TabIndex = 11;
@@ -244,22 +246,38 @@
             this.lblAfiliados.TabIndex = 13;
             this.lblAfiliados.Text = "Numero de Afiliados: 0";
             // 
-            // button1
+            // btnReset
             // 
-            this.button1.Location = new System.Drawing.Point(633, 68);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnReset.Location = new System.Drawing.Point(633, 68);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 14;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dtpInicio
+            // 
+            this.dtpInicio.Location = new System.Drawing.Point(698, 469);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(244, 22);
+            this.dtpInicio.TabIndex = 15;
+            // 
+            // dtpTermina
+            // 
+            this.dtpTermina.Location = new System.Drawing.Point(698, 497);
+            this.dtpTermina.Name = "dtpTermina";
+            this.dtpTermina.Size = new System.Drawing.Size(244, 22);
+            this.dtpTermina.TabIndex = 16;
             // 
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 523);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dtpTermina);
+            this.Controls.Add(this.dtpInicio);
+            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.lblAfiliados);
             this.Controls.Add(this.pbxCargando);
             this.Controls.Add(this.lblFechaTermina);
@@ -307,7 +325,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.Label lblAfiliados;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.DateTimePicker dtpTermina;
     }
 }
 
