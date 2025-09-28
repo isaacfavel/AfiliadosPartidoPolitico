@@ -158,7 +158,11 @@ namespace AfiliadosPartidoPolitico
             else
             {
                 dgvDatos.DataSource = dt;
-                //cbxMunicipio.SelectedIndex = 0;
+                if (cbxMunicipio.Items.Count>0)
+                {
+                    cbxMunicipio.SelectedIndex = 0;
+                }
+
             }
 
             numeroAfiliados();
