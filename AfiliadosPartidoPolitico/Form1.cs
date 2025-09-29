@@ -48,14 +48,7 @@ namespace AfiliadosPartidoPolitico
                 Thread p1 = new Thread(() => cargarDatos(archivo));
                 p1.Start();
 
-            }
-
-
-            
-
-
-           
-            
+            } 
         }
 
         private void cargarMunicipios()
