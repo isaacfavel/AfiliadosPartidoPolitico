@@ -49,11 +49,14 @@
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaTermina = new System.Windows.Forms.Label();
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
+
             this.pbxCargando = new System.Windows.Forms.PictureBox();
             this.lblAfiliados = new System.Windows.Forms.Label();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpTermina = new System.Windows.Forms.DateTimePicker();
             this.btnReset = new System.Windows.Forms.Button();
+
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +127,11 @@
             this.cbxMunicipio.FormattingEnabled = true;
             this.cbxMunicipio.Location = new System.Drawing.Point(93, 136);
             this.cbxMunicipio.Name = "cbxMunicipio";
+
             this.cbxMunicipio.Size = new System.Drawing.Size(156, 24);
+
+            this.cbxMunicipio.Size = new System.Drawing.Size(222, 24);
+
             this.cbxMunicipio.TabIndex = 7;
             this.cbxMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbxMunicipio_SelectedIndexChanged);
             // 
@@ -200,18 +207,29 @@
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
+
             this.checkBoxFecha.Location = new System.Drawing.Point(513, 472);
+
+
+
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
             this.checkBoxFecha.TabIndex = 9;
             this.checkBoxFecha.Text = "Fecha";
             this.checkBoxFecha.UseVisualStyleBackColor = true;
+
             this.checkBoxFecha.CheckedChanged += new System.EventHandler(this.checkBoxFecha_CheckedChanged);
+
+
             // 
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
+
             this.lblFechaInicio.Location = new System.Drawing.Point(602, 473);
+
+            
+
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
             this.lblFechaInicio.TabIndex = 10;
@@ -220,7 +238,11 @@
             // lblFechaTermina
             // 
             this.lblFechaTermina.AutoSize = true;
+
             this.lblFechaTermina.Location = new System.Drawing.Point(594, 498);
+
+
+
             this.lblFechaTermina.Name = "lblFechaTermina";
             this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
             this.lblFechaTermina.TabIndex = 11;
@@ -231,6 +253,7 @@
             this.oFDAbrir.FileName = "openFileDialog1";
             this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
             // 
+
             // pbxCargando
             // 
             this.pbxCargando.Image = ((System.Drawing.Image)(resources.GetObject("pbxCargando.Image")));
@@ -279,6 +302,7 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);

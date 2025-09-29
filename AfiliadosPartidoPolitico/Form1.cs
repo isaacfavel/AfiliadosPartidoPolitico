@@ -50,7 +50,31 @@ namespace AfiliadosPartidoPolitico
 
             }
 
+
             
+
+
+           
+            
+        }
+
+        private void cargarMunicipios()
+        {
+            for (int i = 0; i < dgvDatos.Rows.Count; i++)
+            {
+                var celda = dgvDatos[2, i].Value;
+
+                if (celda != null)
+                {
+                    string mun = celda.ToString();
+
+                    // Evita agregar duplicados
+                    if (!cbxMunicipio.Items.Contains(mun))
+                    {
+                        cbxMunicipio.Items.Add(mun);
+                    }
+                }
+            }
 
         }
 
@@ -220,5 +244,7 @@ namespace AfiliadosPartidoPolitico
             txtEstado.Clear();
             checkBoxFecha.Checked = false;
         }
+
+        
     }
 }
