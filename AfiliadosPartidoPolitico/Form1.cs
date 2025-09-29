@@ -43,7 +43,8 @@ namespace AfiliadosPartidoPolitico
             {
                 //Se recibe el archivo aqui
                 string archivo = oFDAbrir.FileName;
-                txtArchivo.Text = archivo;
+                string nombreArchivo = Path.GetFileName(archivo);
+                txtArchivo.Text = nombreArchivo;
                 pbxCargando.Visible = true;
                 Thread p1 = new Thread(() => cargarDatos(archivo));
                 p1.Start();
@@ -51,25 +52,25 @@ namespace AfiliadosPartidoPolitico
             } 
         }
 
-        private void cargarMunicipios()
-        {
-            for (int i = 0; i < dgvDatos.Rows.Count; i++)
-            {
-                var celda = dgvDatos[2, i].Value;
+        //private void cargarMunicipios()
+        //{
+        //    for (int i = 0; i < dgvDatos.Rows.Count; i++)
+        //    {
+        //        var celda = dgvDatos[2, i].Value;
 
-                if (celda != null)
-                {
-                    string mun = celda.ToString();
+        //        if (celda != null)
+        //        {
+        //            string mun = celda.ToString();
 
-                    // Evita agregar duplicados
-                    if (!cbxMunicipio.Items.Contains(mun))
-                    {
-                        cbxMunicipio.Items.Add(mun);
-                    }
-                }
-            }
+        //            // Evita agregar duplicados
+        //            if (!cbxMunicipio.Items.Contains(mun))
+        //            {
+        //                cbxMunicipio.Items.Add(mun);
+        //            }
+        //        }
+        //    }
 
-        }
+        //}
 
         
         private void cargarDatos(string archivo)

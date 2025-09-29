@@ -49,14 +49,11 @@
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaTermina = new System.Windows.Forms.Label();
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
-
             this.pbxCargando = new System.Windows.Forms.PictureBox();
             this.lblAfiliados = new System.Windows.Forms.Label();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpTermina = new System.Windows.Forms.DateTimePicker();
             this.btnReset = new System.Windows.Forms.Button();
-
-
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).BeginInit();
             this.SuspendLayout();
@@ -64,17 +61,19 @@
             // lblArchivo
             // 
             this.lblArchivo.AutoSize = true;
-            this.lblArchivo.Location = new System.Drawing.Point(25, 21);
+            this.lblArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArchivo.Location = new System.Drawing.Point(-2, 23);
             this.lblArchivo.Name = "lblArchivo";
-            this.lblArchivo.Size = new System.Drawing.Size(52, 16);
+            this.lblArchivo.Size = new System.Drawing.Size(84, 25);
             this.lblArchivo.TabIndex = 0;
-            this.lblArchivo.Text = "Archivo";
+            this.lblArchivo.Text = "Archivo:";
             // 
             // txtArchivo
             // 
-            this.txtArchivo.Location = new System.Drawing.Point(12, 40);
+            this.txtArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtArchivo.Location = new System.Drawing.Point(75, 20);
             this.txtArchivo.Name = "txtArchivo";
-            this.txtArchivo.Size = new System.Drawing.Size(237, 22);
+            this.txtArchivo.Size = new System.Drawing.Size(237, 30);
             this.txtArchivo.TabIndex = 1;
             // 
             // contextMenuStrip1
@@ -88,7 +87,7 @@
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Image = ((System.Drawing.Image)(resources.GetObject("btnCargar.Image")));
             this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargar.Location = new System.Drawing.Point(288, 20);
+            this.btnCargar.Location = new System.Drawing.Point(331, 11);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(131, 51);
             this.btnCargar.TabIndex = 3;
@@ -100,38 +99,38 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(12, 100);
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(-2, 76);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(50, 16);
+            this.lblEstado.Size = new System.Drawing.Size(79, 25);
             this.lblEstado.TabIndex = 4;
-            this.lblEstado.Text = "Estado";
+            this.lblEstado.Text = "Estado:";
             // 
             // lblMunicipio
             // 
             this.lblMunicipio.AutoSize = true;
-            this.lblMunicipio.Location = new System.Drawing.Point(12, 144);
+            this.lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMunicipio.Location = new System.Drawing.Point(-2, 114);
             this.lblMunicipio.Name = "lblMunicipio";
-            this.lblMunicipio.Size = new System.Drawing.Size(64, 16);
+            this.lblMunicipio.Size = new System.Drawing.Size(95, 25);
             this.lblMunicipio.TabIndex = 5;
             this.lblMunicipio.Text = "Municipio";
             // 
             // txtEstado
             // 
-            this.txtEstado.Location = new System.Drawing.Point(93, 93);
+            this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstado.Location = new System.Drawing.Point(75, 71);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(128, 22);
+            this.txtEstado.Size = new System.Drawing.Size(237, 30);
             this.txtEstado.TabIndex = 6;
             // 
             // cbxMunicipio
             // 
+            this.cbxMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMunicipio.FormattingEnabled = true;
-            this.cbxMunicipio.Location = new System.Drawing.Point(93, 136);
+            this.cbxMunicipio.Location = new System.Drawing.Point(90, 111);
             this.cbxMunicipio.Name = "cbxMunicipio";
-
-            this.cbxMunicipio.Size = new System.Drawing.Size(156, 24);
-
-            this.cbxMunicipio.Size = new System.Drawing.Size(222, 24);
-
+            this.cbxMunicipio.Size = new System.Drawing.Size(222, 33);
             this.cbxMunicipio.TabIndex = 7;
             this.cbxMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbxMunicipio_SelectedIndexChanged);
             // 
@@ -207,44 +206,32 @@
             // checkBoxFecha
             // 
             this.checkBoxFecha.AutoSize = true;
-
-            this.checkBoxFecha.Location = new System.Drawing.Point(513, 472);
-
-
-
+            this.checkBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFecha.Location = new System.Drawing.Point(500, 478);
             this.checkBoxFecha.Name = "checkBoxFecha";
-            this.checkBoxFecha.Size = new System.Drawing.Size(67, 20);
+            this.checkBoxFecha.Size = new System.Drawing.Size(89, 29);
             this.checkBoxFecha.TabIndex = 9;
             this.checkBoxFecha.Text = "Fecha";
             this.checkBoxFecha.UseVisualStyleBackColor = true;
-
             this.checkBoxFecha.CheckedChanged += new System.EventHandler(this.checkBoxFecha_CheckedChanged);
-
-
             // 
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-
-            this.lblFechaInicio.Location = new System.Drawing.Point(602, 473);
-
-            
-
+            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInicio.Location = new System.Drawing.Point(595, 478);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(79, 16);
+            this.lblFechaInicio.Size = new System.Drawing.Size(117, 25);
             this.lblFechaInicio.TabIndex = 10;
             this.lblFechaInicio.Text = "Fecha Inicio";
             // 
             // lblFechaTermina
             // 
             this.lblFechaTermina.AutoSize = true;
-
-            this.lblFechaTermina.Location = new System.Drawing.Point(594, 498);
-
-
-
+            this.lblFechaTermina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaTermina.Location = new System.Drawing.Point(595, 520);
             this.lblFechaTermina.Name = "lblFechaTermina";
-            this.lblFechaTermina.Size = new System.Drawing.Size(98, 16);
+            this.lblFechaTermina.Size = new System.Drawing.Size(144, 25);
             this.lblFechaTermina.TabIndex = 11;
             this.lblFechaTermina.Text = "Fecha Termina";
             // 
@@ -253,11 +240,10 @@
             this.oFDAbrir.FileName = "openFileDialog1";
             this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
             // 
-
             // pbxCargando
             // 
             this.pbxCargando.Image = ((System.Drawing.Image)(resources.GetObject("pbxCargando.Image")));
-            this.pbxCargando.Location = new System.Drawing.Point(440, 20);
+            this.pbxCargando.Location = new System.Drawing.Point(479, 11);
             this.pbxCargando.Name = "pbxCargando";
             this.pbxCargando.Size = new System.Drawing.Size(59, 61);
             this.pbxCargando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -267,24 +253,27 @@
             // lblAfiliados
             // 
             this.lblAfiliados.AutoSize = true;
-            this.lblAfiliados.Location = new System.Drawing.Point(32, 473);
+            this.lblAfiliados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAfiliados.Location = new System.Drawing.Point(25, 498);
             this.lblAfiliados.Name = "lblAfiliados";
-            this.lblAfiliados.Size = new System.Drawing.Size(142, 16);
+            this.lblAfiliados.Size = new System.Drawing.Size(209, 25);
             this.lblAfiliados.TabIndex = 13;
             this.lblAfiliados.Text = "Numero de Afiliados: 0";
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Location = new System.Drawing.Point(698, 469);
+            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Location = new System.Drawing.Point(745, 473);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(268, 22);
+            this.dtpInicio.Size = new System.Drawing.Size(268, 30);
             this.dtpInicio.TabIndex = 15;
             // 
             // dtpTermina
             // 
-            this.dtpTermina.Location = new System.Drawing.Point(698, 497);
+            this.dtpTermina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTermina.Location = new System.Drawing.Point(745, 520);
             this.dtpTermina.Name = "dtpTermina";
-            this.dtpTermina.Size = new System.Drawing.Size(268, 22);
+            this.dtpTermina.Size = new System.Drawing.Size(268, 30);
             this.dtpTermina.TabIndex = 16;
             // 
             // btnReset
@@ -292,7 +281,7 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(859, 11);
+            this.btnReset.Location = new System.Drawing.Point(912, -1);
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnReset.Size = new System.Drawing.Size(154, 51);
@@ -302,12 +291,11 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 523);
+            this.ClientSize = new System.Drawing.Size(1065, 562);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dtpTermina);
             this.Controls.Add(this.dtpInicio);
