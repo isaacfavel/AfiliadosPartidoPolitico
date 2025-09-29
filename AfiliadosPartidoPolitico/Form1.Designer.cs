@@ -61,18 +61,19 @@
             // lblArchivo
             // 
             this.lblArchivo.AutoSize = true;
-            this.lblArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArchivo.Location = new System.Drawing.Point(-2, 23);
+            this.lblArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblArchivo.Location = new System.Drawing.Point(12, 9);
             this.lblArchivo.Name = "lblArchivo";
-            this.lblArchivo.Size = new System.Drawing.Size(84, 25);
+            this.lblArchivo.Size = new System.Drawing.Size(75, 22);
             this.lblArchivo.TabIndex = 0;
             this.lblArchivo.Text = "Archivo:";
             // 
             // txtArchivo
             // 
             this.txtArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtArchivo.Location = new System.Drawing.Point(75, 20);
+            this.txtArchivo.Location = new System.Drawing.Point(12, 34);
             this.txtArchivo.Name = "txtArchivo";
+            this.txtArchivo.ReadOnly = true;
             this.txtArchivo.Size = new System.Drawing.Size(237, 30);
             this.txtArchivo.TabIndex = 1;
             // 
@@ -87,7 +88,7 @@
             this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargar.Image = ((System.Drawing.Image)(resources.GetObject("btnCargar.Image")));
             this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargar.Location = new System.Drawing.Point(331, 11);
+            this.btnCargar.Location = new System.Drawing.Point(288, 19);
             this.btnCargar.Name = "btnCargar";
             this.btnCargar.Size = new System.Drawing.Size(131, 51);
             this.btnCargar.TabIndex = 3;
@@ -99,38 +100,38 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(-2, 76);
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(2, 99);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(79, 25);
+            this.lblEstado.Size = new System.Drawing.Size(71, 22);
             this.lblEstado.TabIndex = 4;
             this.lblEstado.Text = "Estado:";
             // 
             // lblMunicipio
             // 
             this.lblMunicipio.AutoSize = true;
-            this.lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMunicipio.Location = new System.Drawing.Point(-2, 114);
+            this.lblMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMunicipio.Location = new System.Drawing.Point(2, 140);
             this.lblMunicipio.Name = "lblMunicipio";
-            this.lblMunicipio.Size = new System.Drawing.Size(95, 25);
+            this.lblMunicipio.Size = new System.Drawing.Size(90, 22);
             this.lblMunicipio.TabIndex = 5;
-            this.lblMunicipio.Text = "Municipio";
+            this.lblMunicipio.Text = "Municipio:";
             // 
             // txtEstado
             // 
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstado.Location = new System.Drawing.Point(75, 71);
+            this.txtEstado.Location = new System.Drawing.Point(90, 91);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(237, 30);
+            this.txtEstado.Size = new System.Drawing.Size(222, 30);
             this.txtEstado.TabIndex = 6;
             // 
             // cbxMunicipio
             // 
-            this.cbxMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxMunicipio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMunicipio.FormattingEnabled = true;
-            this.cbxMunicipio.Location = new System.Drawing.Point(90, 111);
+            this.cbxMunicipio.Location = new System.Drawing.Point(90, 135);
             this.cbxMunicipio.Name = "cbxMunicipio";
-            this.cbxMunicipio.Size = new System.Drawing.Size(222, 33);
+            this.cbxMunicipio.Size = new System.Drawing.Size(222, 28);
             this.cbxMunicipio.TabIndex = 7;
             this.cbxMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbxMunicipio_SelectedIndexChanged);
             // 
@@ -207,7 +208,7 @@
             // 
             this.checkBoxFecha.AutoSize = true;
             this.checkBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxFecha.Location = new System.Drawing.Point(500, 478);
+            this.checkBoxFecha.Location = new System.Drawing.Point(528, 459);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(89, 29);
             this.checkBoxFecha.TabIndex = 9;
@@ -218,22 +219,22 @@
             // lblFechaInicio
             // 
             this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicio.Location = new System.Drawing.Point(595, 478);
+            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInicio.Location = new System.Drawing.Point(524, 513);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(117, 25);
+            this.lblFechaInicio.Size = new System.Drawing.Size(111, 22);
             this.lblFechaInicio.TabIndex = 10;
-            this.lblFechaInicio.Text = "Fecha Inicio";
+            this.lblFechaInicio.Text = "Fecha Inicio:";
             // 
             // lblFechaTermina
             // 
             this.lblFechaTermina.AutoSize = true;
-            this.lblFechaTermina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaTermina.Location = new System.Drawing.Point(595, 520);
+            this.lblFechaTermina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaTermina.Location = new System.Drawing.Point(524, 555);
             this.lblFechaTermina.Name = "lblFechaTermina";
-            this.lblFechaTermina.Size = new System.Drawing.Size(144, 25);
+            this.lblFechaTermina.Size = new System.Drawing.Size(136, 22);
             this.lblFechaTermina.TabIndex = 11;
-            this.lblFechaTermina.Text = "Fecha Termina";
+            this.lblFechaTermina.Text = "Fecha Termina:";
             // 
             // oFDAbrir
             // 
@@ -243,7 +244,7 @@
             // pbxCargando
             // 
             this.pbxCargando.Image = ((System.Drawing.Image)(resources.GetObject("pbxCargando.Image")));
-            this.pbxCargando.Location = new System.Drawing.Point(479, 11);
+            this.pbxCargando.Location = new System.Drawing.Point(425, 12);
             this.pbxCargando.Name = "pbxCargando";
             this.pbxCargando.Size = new System.Drawing.Size(59, 61);
             this.pbxCargando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -254,7 +255,7 @@
             // 
             this.lblAfiliados.AutoSize = true;
             this.lblAfiliados.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAfiliados.Location = new System.Drawing.Point(25, 498);
+            this.lblAfiliados.Location = new System.Drawing.Point(40, 508);
             this.lblAfiliados.Name = "lblAfiliados";
             this.lblAfiliados.Size = new System.Drawing.Size(209, 25);
             this.lblAfiliados.TabIndex = 13;
@@ -262,18 +263,18 @@
             // 
             // dtpInicio
             // 
-            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInicio.Location = new System.Drawing.Point(745, 473);
+            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Location = new System.Drawing.Point(674, 508);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(268, 30);
+            this.dtpInicio.Size = new System.Drawing.Size(268, 28);
             this.dtpInicio.TabIndex = 15;
             // 
             // dtpTermina
             // 
-            this.dtpTermina.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpTermina.Location = new System.Drawing.Point(745, 520);
+            this.dtpTermina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTermina.Location = new System.Drawing.Point(674, 555);
             this.dtpTermina.Name = "dtpTermina";
-            this.dtpTermina.Size = new System.Drawing.Size(268, 30);
+            this.dtpTermina.Size = new System.Drawing.Size(268, 28);
             this.dtpTermina.TabIndex = 16;
             // 
             // btnReset
@@ -281,7 +282,7 @@
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
             this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(912, -1);
+            this.btnReset.Location = new System.Drawing.Point(788, 2);
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnReset.Size = new System.Drawing.Size(154, 51);
@@ -295,7 +296,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1065, 562);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(956, 587);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dtpTermina);
             this.Controls.Add(this.dtpInicio);
