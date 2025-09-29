@@ -82,11 +82,15 @@
             // 
             // btnCargar
             // 
-            this.btnCargar.Location = new System.Drawing.Point(266, 34);
+            this.btnCargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargar.Image = ((System.Drawing.Image)(resources.GetObject("btnCargar.Image")));
+            this.btnCargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargar.Location = new System.Drawing.Point(288, 20);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(92, 34);
+            this.btnCargar.Size = new System.Drawing.Size(131, 51);
             this.btnCargar.TabIndex = 3;
             this.btnCargar.Text = "Cargar";
+            this.btnCargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCargar.UseVisualStyleBackColor = true;
             this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
@@ -230,9 +234,9 @@
             // pbxCargando
             // 
             this.pbxCargando.Image = ((System.Drawing.Image)(resources.GetObject("pbxCargando.Image")));
-            this.pbxCargando.Location = new System.Drawing.Point(373, 21);
+            this.pbxCargando.Location = new System.Drawing.Point(440, 20);
             this.pbxCargando.Name = "pbxCargando";
-            this.pbxCargando.Size = new System.Drawing.Size(53, 50);
+            this.pbxCargando.Size = new System.Drawing.Size(59, 61);
             this.pbxCargando.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxCargando.TabIndex = 12;
             this.pbxCargando.TabStop = false;
@@ -262,11 +266,16 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(605, 125);
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(859, 11);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnReset.Size = new System.Drawing.Size(154, 51);
             this.btnReset.TabIndex = 17;
-            this.btnReset.Text = "Reset";
+            this.btnReset.Text = "Reiniciar";
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -294,7 +303,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAfiliados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Afiliados Pri";
+            this.Text = "Afiliados pri";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).EndInit();
             this.ResumeLayout(false);

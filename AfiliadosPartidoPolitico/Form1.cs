@@ -41,6 +41,7 @@ namespace AfiliadosPartidoPolitico
             //if para ver si confirma la seleccion del archivo
             if (oFDAbrir.ShowDialog() == DialogResult.OK)
             {
+                //Se recibe el archivo aqui
                 string archivo = oFDAbrir.FileName;
                 txtArchivo.Text = archivo;
                 pbxCargando.Visible = true;
@@ -218,7 +219,6 @@ namespace AfiliadosPartidoPolitico
             txtArchivo.Clear();
             txtEstado.Clear();
             checkBoxFecha.Checked = false;
-
         }
     }
 }
