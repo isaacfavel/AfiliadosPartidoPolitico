@@ -49,7 +49,6 @@
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaTermina = new System.Windows.Forms.Label();
             this.oFDAbrir = new System.Windows.Forms.OpenFileDialog();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,22 +209,11 @@
             this.oFDAbrir.FileName = "openFileDialog1";
             this.oFDAbrir.Filter = "Archivo de Excel|*.xlsx";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(398, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 57);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 523);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblFechaTermina);
             this.Controls.Add(this.lblFechaInicio);
             this.Controls.Add(this.checkBoxFecha);
@@ -268,7 +256,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button button1;
     }
 }
 
