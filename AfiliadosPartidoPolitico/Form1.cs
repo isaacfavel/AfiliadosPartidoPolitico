@@ -39,6 +39,7 @@ namespace AfiliadosPartidoPolitico
             dt = new DataTable();
             pbxCargando.Visible= false;
             checkBoxFecha.Enabled=false;
+            btnReset.Enabled=false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -54,6 +55,7 @@ namespace AfiliadosPartidoPolitico
                 //Se crea el hilo y se empieza a ejeccuatr el metodo dentro del hilo
                 Thread p1 = new Thread(() => cargarDatos(archivo));
                 p1.Start();
+                btnReset.Enabled = true;
 
             } 
 
@@ -97,8 +99,13 @@ namespace AfiliadosPartidoPolitico
                 {
                     dgvDatos.Columns.Clear();
                     dgvDatos.DataSource = dt;
-                    dgvDatos.Columns[1].Width = 200;
-                    dgvDatos.Columns[3].Width = 200;
+                    if (dgvDatos.Columns.Contains("ID") && dgvDatos.Columns.Contains("ENTIDAD") && dgvDatos.Columns.Contains("NOMBRE"))
+                    {
+                        dgvDatos.Columns[0].Width = 50;
+                        dgvDatos.Columns[1].Width = 200;
+                        dgvDatos.Columns[3].Width = 200;
+                    }
+                    
                     pbxCargando.Visible =false;
                     cbxMunicipio.Items.Add("Todos");
                     cbxMunicipio.Items.Add("Sin municipio");
@@ -237,6 +244,7 @@ namespace AfiliadosPartidoPolitico
         private void btnReset_Click(object sender, EventArgs e)
         {
             //limpiamos todo
+            checkBoxFecha.Checked = false;
             dgvDatos.DataSource = null;
             dt.Clear();
             dat.Clear();
@@ -244,17 +252,13 @@ namespace AfiliadosPartidoPolitico
             cbxMunicipio.Items.Clear();
             txtArchivo.Clear();
             txtEstado.Clear();
-            checkBoxFecha.Checked = false;
             cbxMunicipio.Text = "";
             cbxMunicipio.Enabled=true;
         }
 
         
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+      
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
