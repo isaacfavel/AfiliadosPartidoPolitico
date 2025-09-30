@@ -33,6 +33,7 @@
             this.lblArchivo = new System.Windows.Forms.Label();
             this.txtArchivo = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCargar = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblMunicipio = new System.Windows.Forms.Label();
@@ -54,7 +55,7 @@
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpTermina = new System.Windows.Forms.DateTimePicker();
             this.btnReset = new System.Windows.Forms.Button();
-            this.sToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCargando)).BeginInit();
@@ -85,7 +86,13 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 28);
+            // 
+            // sToolStripMenuItem
+            // 
+            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
+            this.sToolStripMenuItem.Size = new System.Drawing.Size(107, 24);
+            this.sToolStripMenuItem.Text = "&Salir";
             // 
             // btnCargar
             // 
@@ -126,7 +133,7 @@
             this.txtEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstado.Location = new System.Drawing.Point(90, 91);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(222, 30);
+            this.txtEstado.Size = new System.Drawing.Size(246, 30);
             this.txtEstado.TabIndex = 6;
             // 
             // cbxMunicipio
@@ -135,7 +142,7 @@
             this.cbxMunicipio.FormattingEnabled = true;
             this.cbxMunicipio.Location = new System.Drawing.Point(90, 135);
             this.cbxMunicipio.Name = "cbxMunicipio";
-            this.cbxMunicipio.Size = new System.Drawing.Size(222, 28);
+            this.cbxMunicipio.Size = new System.Drawing.Size(246, 28);
             this.cbxMunicipio.TabIndex = 7;
             this.cbxMunicipio.SelectedIndexChanged += new System.EventHandler(this.cbxMunicipio_SelectedIndexChanged);
             // 
@@ -212,7 +219,7 @@
             // 
             this.checkBoxFecha.AutoSize = true;
             this.checkBoxFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxFecha.Location = new System.Drawing.Point(473, 459);
+            this.checkBoxFecha.Location = new System.Drawing.Point(446, 459);
             this.checkBoxFecha.Name = "checkBoxFecha";
             this.checkBoxFecha.Size = new System.Drawing.Size(89, 29);
             this.checkBoxFecha.TabIndex = 9;
@@ -268,9 +275,9 @@
             // dtpInicio
             // 
             this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInicio.Location = new System.Drawing.Point(594, 508);
+            this.dtpInicio.Location = new System.Drawing.Point(592, 508);
             this.dtpInicio.Name = "dtpInicio";
-            this.dtpInicio.Size = new System.Drawing.Size(348, 28);
+            this.dtpInicio.Size = new System.Drawing.Size(350, 28);
             this.dtpInicio.TabIndex = 15;
             // 
             // dtpTermina
@@ -296,19 +303,24 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // sToolStripMenuItem
+            // btnSalir
             // 
-            this.sToolStripMenuItem.Name = "sToolStripMenuItem";
-            this.sToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.sToolStripMenuItem.Text = "&Salir";
-            this.sToolStripMenuItem.Click += new System.EventHandler(this.sToolStripMenuItem_Click);
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(858, 59);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(84, 35);
+            this.btnSalir.TabIndex = 18;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // FrmAfiliados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(956, 587);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.dtpTermina);
             this.Controls.Add(this.dtpInicio);
@@ -364,6 +376,7 @@
         private System.Windows.Forms.DateTimePicker dtpTermina;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ToolStripMenuItem sToolStripMenuItem;
+        private System.Windows.Forms.Button btnSalir;
     }
 }
 

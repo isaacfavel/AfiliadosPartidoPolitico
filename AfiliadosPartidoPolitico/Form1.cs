@@ -96,6 +96,8 @@ namespace AfiliadosPartidoPolitico
                 {
                     dgvDatos.Columns.Clear();
                     dgvDatos.DataSource = dt;
+                    dgvDatos.Columns[1].Width = 200;
+                    dgvDatos.Columns[3].Width = 200;
                     pbxCargando.Visible =false;
                     cbxMunicipio.Items.Add("Todos");
                     cbxMunicipio.Items.Add("Sin municipio");
@@ -246,7 +248,14 @@ namespace AfiliadosPartidoPolitico
             cbxMunicipio.Enabled=true;
         }
 
-        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
         }
