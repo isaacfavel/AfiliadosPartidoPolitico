@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AfiliadosPartidoPolitico
 {
@@ -20,7 +21,10 @@ namespace AfiliadosPartidoPolitico
     {
         //declarar encabezados de columna
         List<string> columnas;
+        //en esta tabla guardamos todo el total de registros del archivo
         DataTable dt;
+        //en esta tabla guardamos solo los que son de cada municipio
+        DataTable dat;
 
         public FrmAfiliados()
         {
@@ -34,6 +38,7 @@ namespace AfiliadosPartidoPolitico
             columnas.Add("ESTATUS");
             dt = new DataTable();
             pbxCargando.Visible= false;
+            checkBoxFecha.Enabled=false;
         }
 
         private void btnCargar_Click(object sender, EventArgs e)
@@ -46,33 +51,12 @@ namespace AfiliadosPartidoPolitico
                 string nombreArchivo = Path.GetFileName(archivo);
                 txtArchivo.Text = nombreArchivo;
                 pbxCargando.Visible = true;
+                //Se crea el hilo y se empieza a ejeccuatr el metodo dentro del hilo
                 Thread p1 = new Thread(() => cargarDatos(archivo));
                 p1.Start();
 
             } 
         }
-
-        //private void cargarMunicipios()
-        //{
-        //    for (int i = 0; i < dgvDatos.Rows.Count; i++)
-        //    {
-        //        var celda = dgvDatos[2, i].Value;
-
-        //        if (celda != null)
-        //        {
-        //            string mun = celda.ToString();
-
-        //            // Evita agregar duplicados
-        //            if (!cbxMunicipio.Items.Contains(mun))
-        //            {
-        //                cbxMunicipio.Items.Add(mun);
-        //            }
-        //        }
-        //    }
-
-        //}
-
-        
         private void cargarDatos(string archivo)
         {
             //licencia de paquete
@@ -82,9 +66,6 @@ namespace AfiliadosPartidoPolitico
             {
                 //se obtiene la primera hoja del archivo
                 ExcelWorksheet worksheet = paquete.Workbook.Worksheets[0];
-
-                //se crea una tbla para ponerle la informacion
-
 
                 foreach (var col in columnas)
                 {
@@ -110,33 +91,30 @@ namespace AfiliadosPartidoPolitico
                 
 
                 
-
+                //Se crea una invocacion para poder tener acceso a al hilo principal y poder asignar cosas en el visual
                 this.Invoke((MethodInvoker)delegate
                 {
                     dgvDatos.Columns.Clear();
                     dgvDatos.DataSource = dt;
-                    dgvDatos.Columns[0].Width =45;
-                    dgvDatos.Columns[3].Width = 200;
                     pbxCargando.Visible =false;
                     cbxMunicipio.Items.Add("Todos");
                     cbxMunicipio.Items.Add("Sin municipio");
                     txtEstado.Text = dt.Rows[0][1].ToString();
                     numeroAfiliados();
+                    //Se agregan los municipios
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        var celda = dt.Rows[i][2];
-
-                        if (celda != null)
+                        string mun = dt.Rows[i][2].ToString();
+                        if (mun !="")
                         {
-                            string mun = celda.ToString();
-
-                            // Evita agregar duplicados
+                            // verificamos que no se repitan
                             if (!cbxMunicipio.Items.Contains(mun) && mun!="")
                             {
                                 cbxMunicipio.Items.Add(mun);
                             }
                         }
                     }
+                    cbxMunicipio.SelectedIndex = 0;
                 });
 
                 
@@ -149,37 +127,56 @@ namespace AfiliadosPartidoPolitico
 
         private void checkBoxFecha_CheckedChanged(object sender, EventArgs e)
         {
-            
-           
-
+            //Checamos si esta seleccionado
             if (checkBoxFecha.Checked)
             {
                 DateTime fechaInicio = dtpInicio.Value;
                 DateTime fechaTermina = dtpTermina.Value;
-
-                //Creamos un nuevo dataTable
-                DataTable tablaFecha = dt.Clone();
-
-                foreach (DataRow fila in dt.Rows)
+                
+                if (cbxMunicipio.SelectedItem.ToString()!="Todos")
                 {
-                    
-                    DateTime fecha = Convert.ToDateTime(fila["FECHA_AFILIACION"]);
-
-                    // checar la fecha para ver si esta dentro del rango
-                    if (fecha >= fechaInicio && fecha <= fechaTermina)
+                    DataTable data=dat.Clone();
+                    foreach (DataRow fila in dat.Rows)
                     {
-                        tablaFecha.ImportRow(fila);
-                    }
-                }
 
-                dgvDatos.DataSource = tablaFecha;
+                        DateTime fecha = Convert.ToDateTime(fila["FECHA_AFILIACION"]);
+
+                        // checar la fecha para ver si esta dentro del rango
+                        if (fecha >= fechaInicio && fecha <= fechaTermina)
+                        {
+                            data.ImportRow(fila);
+                        }
+                    }
+
+                    dgvDatos.DataSource = data;
+                }
+                else
+                {
+                    DataTable tablaFecha = dt.Clone();
+
+                    foreach (DataRow fila in dt.Rows)
+                    {
+
+                        DateTime fecha = Convert.ToDateTime(fila["FECHA_AFILIACION"]);
+
+                        // checar la fecha para ver si esta dentro del rango
+                        if (fecha >= fechaInicio && fecha <= fechaTermina)
+                        {
+                            tablaFecha.ImportRow(fila);
+                        }
+                    }
+
+                    dgvDatos.DataSource = tablaFecha;
+                }
+                cbxMunicipio.Enabled = false;
             }
-            else
+            else 
             {
                 dgvDatos.DataSource = dt;
-                if (cbxMunicipio.Items.Count>0)
+                if (cbxMunicipio.Items.Count > 0)
                 {
                     cbxMunicipio.SelectedIndex = 0;
+                    cbxMunicipio.Enabled=true;
                 }
 
             }
@@ -189,10 +186,13 @@ namespace AfiliadosPartidoPolitico
         
         private void cbxMunicipio_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Habilitamos el check
+            checkBoxFecha.Enabled = true;
             string municipio = cbxMunicipio.SelectedItem.ToString();
             
             // Clonamos la estructura del DataTable original
-            DataTable dat = dt.Clone();
+            dat = dt.Clone();
+            //si es verdadero asignamos todos los registros
             if (municipio == "Todos")
             {
                 dgvDatos.DataSource = dt;
@@ -211,6 +211,8 @@ namespace AfiliadosPartidoPolitico
                     {
                         mun = fila["MUNICIPIO"].ToString();
                     }
+
+                    //Si la celda municipio esta vacia y el combox esta seleccionado sin municipio entra
                     if (municipio == "Sin municipio" && string.IsNullOrWhiteSpace(mun))
                     {
                         dat.ImportRow(fila);
@@ -221,6 +223,7 @@ namespace AfiliadosPartidoPolitico
                     }
                 }
 
+                //Agregamos la tabla al dgv
                 dgvDatos.DataSource = dat;
 
             }
@@ -230,15 +233,22 @@ namespace AfiliadosPartidoPolitico
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            //limpiamos todo
             dgvDatos.DataSource = null;
             dt.Clear();
+            dat.Clear();
             numeroAfiliados();
             cbxMunicipio.Items.Clear();
             txtArchivo.Clear();
             txtEstado.Clear();
             checkBoxFecha.Checked = false;
+            cbxMunicipio.Text = "";
+            cbxMunicipio.Enabled=true;
         }
 
-        
+        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
