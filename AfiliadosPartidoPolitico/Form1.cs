@@ -50,6 +50,7 @@ namespace AfiliadosPartidoPolitico
                 p1.Start();
 
             } 
+
         }
 
         //private void cargarMunicipios()
