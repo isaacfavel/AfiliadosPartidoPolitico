@@ -79,7 +79,7 @@ namespace AfiliadosPartidoPolitico
                     }
                 }
                 //obtengo el numero de filas
-                int filas = worksheet.Dimension.End.Row;
+                int filas = worksheet.Dimension.End.Row+1;
                 for (int i =2; i < filas; i++) {
                     //creamos un data row para copiar el contenido de la celda 
                     DataRow row = dt.NewRow();
