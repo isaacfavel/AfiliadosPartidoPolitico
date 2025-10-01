@@ -150,7 +150,7 @@
             // 
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
-            this.dgvDatos.BackgroundColor = System.Drawing.Color.CornflowerBlue;
+            this.dgvDatos.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
